@@ -116,7 +116,7 @@ const AdminAvatarMenu = (props) => {
           >
             <Avatar
               alt=" user Admin"
-              src="https://www.mlsu.ac.in/elsp/images/student.jpg"
+              src="https://ibb.co/F8FZDzd"
             />
           </AdminAvatarBadge>
         </ListItemAvatar>
