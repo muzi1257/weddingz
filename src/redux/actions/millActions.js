@@ -96,7 +96,7 @@ export const deleteMill = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await api.delete(`/v1/vendors/delete/${id}/`, config);
+    const { data } = await api.delete(`/v1/vendors/${id}/`, config);
 
     dispatch({
       type: MILL_DELETE_SUCCESS,
