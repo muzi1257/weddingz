@@ -48,13 +48,13 @@ export const trollyCreateReducer = (state = {}, action) => {
   }
 };
 
-export const trollyListReducer = (state = { trollys: [] }, action) => {
+export const trollyListReducer = (state = { }, action) => {
   switch (action.type) {
     case TROLLY_LIST_REQUEST:
       return { loading: true };
 
     case TROLLY_LIST_SUCCESS:
-      return { loading: false, ...action.payload };
+      return { loading: false, venues:action.payload.data.allVenues };
 
     case TROLLY_LIST_FAIL:
       return { loading: false, error: action.payload };

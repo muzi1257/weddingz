@@ -72,7 +72,7 @@ const AllUsersPage = (props) => {
   const { userInfo } = userLogin;
 
   useEffect(() => {
-    if (userInfo && userInfo.isAdmin) {
+    if (userInfo) {
       dispatch(listUsers());
     } else {
       history.push('/login');

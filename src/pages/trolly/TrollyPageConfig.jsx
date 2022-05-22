@@ -4,7 +4,7 @@ import TrollyDetailsPage from './TrollyProfilePage';
 export const TrollysPageConfig = {
   routes: [
     {
-      path: '/trolly',
+      path: '/venues',
       exact: true,
       component: AllTrollysPage,
     },

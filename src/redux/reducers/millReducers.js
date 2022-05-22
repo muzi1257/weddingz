@@ -24,7 +24,6 @@ export const millListReducer = (state = {}, action) => {
       return { loading: true, data: [] };
 
       case MILL_LIST_SUCCESS:
-        console.log('456546',action.payload.data.allVendors)
         return { loading: false, vendors:action.payload.data.allVendors };
   
       case MILL_LIST_FAIL:

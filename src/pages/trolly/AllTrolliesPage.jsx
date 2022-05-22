@@ -36,32 +36,32 @@ const columns = [
     },
   },
   {
-    name: 'number',
-    label: 'Number',
+    name: 'title',
+    label: 'Title',
     options: {
       filter: true,
       sort: true,
     },
   },
   {
-    name: 'mill',
-    label: 'Mill',
+    name: 'slug',
+    label: 'Slug',
     options: {
       filter: true,
       sort: true,
     },
   },
   {
-    name: 'driver',
-    label: 'Driver',
+    name: 'price',
+    label: 'Price',
     options: {
       filter: true,
       sort: false,
     },
   },
   {
-    name: 'caneweight',
-    label: 'Cane Weight (M.Ton)',
+    name: 'contactNo',
+    label: 'Contact No',
     options: {
       filter: true,
       sort: false,
@@ -69,8 +69,8 @@ const columns = [
     
   },
   {
-    name: 'amount',
-    label: 'Amount (Rs)',
+    name: 'category',
+    label: 'Category',
     options: {
       filter: true,
       sort: false,
@@ -78,7 +78,7 @@ const columns = [
     
   },
   {
-    name: 'areaName',
+    name: 'area',
     label: 'Area',
     options: {
       filter: true,
@@ -96,7 +96,7 @@ const AllTrollysPage = (props) => {
   const dispatch = useDispatch();
 
   const trollyList = useSelector((state) => state.trollyList);
-  const { loading, error, trollys } = trollyList;
+  const { loading, error, venues } = trollyList;
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -115,7 +115,7 @@ const AllTrollysPage = (props) => {
     },
     onRowsDelete: (rowsDeleted, dataRows) => {
       rowsDeleted.data.forEach((row) => {
-        dispatch(deleteTrolly(trollys[row.dataIndex]._id));
+        dispatch(deleteTrolly(venues[row.dataIndex]._id));
       });
     },
     onRowClick: (rowData, rowState) => {
@@ -129,15 +129,15 @@ const AllTrollysPage = (props) => {
       <Grid container className={classes.my3} alignItems="center">
         <Grid item className={classes.mRight}>
           <Typography variant="h5" component="h1">
-            Trollys
+            Venues
           </Typography>
         </Grid>
        
       </Grid>
       <AdminBreadcrumbs path={history} />
       <MUIDataTable
-        title={'Trolly List'}
-        data={trollys}
+        title={'Venue List'}
+        data={venues}
         columns={columns}
         options={options}
       />

@@ -87,7 +87,7 @@ const AllMillsPage = (props) => {
 
   const millList = useSelector((state) => state.millList);
   const { loading, error, vendors } = millList;
-  console.log('o0o0o0o',millList)
+  
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;

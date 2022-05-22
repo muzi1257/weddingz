@@ -76,7 +76,7 @@ export const listTrollys = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await api.get(`/trolly/`, config);
+    const { data } = await api.get(`/v1/venues/`, config);
     dispatch({
       type: TROLLY_LIST_SUCCESS,
       payload: data,
