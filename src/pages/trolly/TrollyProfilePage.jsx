@@ -68,9 +68,8 @@ const TrollyDetailsPage = (props) => {
   
   const dispatch = useDispatch();
 
-  const trollyDetails = useSelector((state) => state.trollyDetails);
-  const { error, loading, trolly } = trollyDetails;
-
+  const trollyList = useSelector((state) => state.trollyList);
+  const { loading, error, venue } = trollyList;
   const trollyUpdate = useSelector((state) => state.trollyUpdate);
   const {
     error: errorUpdate,
@@ -80,26 +79,19 @@ const TrollyDetailsPage = (props) => {
 
   useEffect(() => {
     if (successUpdate) {
-      dispatch({ type: TROLLY_UPDATE_RESET });
-      history.push('/users');
-    } else {
-      if (!trolly.number || trolly._id !== Number(trollyId)) {
+      
         dispatch(getTrollyDetails(trollyId));
       }
-    }
-  }, [trolly, trollyId, successUpdate, history]);
+    
+  }, [ trollyId, successUpdate, history]);
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    history.push(`/trolly/${trolly._id}/edit`);
-  };
 
   const classes = useStyles();
 
   return (
     <>
       <Typography className={classes.mb3} variant="h5" component="h1">
-        Trolly Details : {trolly.number}
+        Trolly Details : {venue.number}
       </Typography>
       <AdminBreadcrumbs path={history} />
       <div className={classes.root}>
@@ -110,8 +102,8 @@ const TrollyDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          image={process.env.REACT_APP_API_URL + trolly.image}
-          alt={trolly.image}
+          image={process.env.REACT_APP_API_URL + venue.image}
+          alt={venue.image}
         />
         <CardContent>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
@@ -131,8 +123,8 @@ const TrollyDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          image={process.env.REACT_APP_API_URL + trolly.recieving_slip}
-          alt={trolly.recieving_slip}
+          image={process.env.REACT_APP_API_URL + venue.recieving_slip}
+          alt={venue.recieving_slip}
         />
         <CardContent>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
@@ -150,8 +142,8 @@ const TrollyDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          image={process.env.REACT_APP_API_URL + trolly.wieght_slip}
-          alt={trolly.wieght_slip}
+          image={process.env.REACT_APP_API_URL + venue.wieght_slip}
+          alt={venue.wieght_slip}
         />
        <CardContent>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
@@ -169,31 +161,31 @@ const TrollyDetailsPage = (props) => {
         <CardContent>
           <Typography className={classes.mb3} gutterBottom variant="h4" component="div">
             Trolly Number:
-            {trolly.number}
+            {venue.number}
           </Typography>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
             Trolly Acre Name:
-            {trolly.acreName}
+            {venue.acreName}
           </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
            Driver:
-            {trolly.driver}
+            {venue.driver}
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
             Actual Weight (Before Loading):
-            {trolly.trollyWeight} kg
+            {venue.venueWeight} kg
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
             Loaded Weight:
-            {trolly.loadedWeight} kg
+            {venue.loadedWeight} kg
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
             Cane Weight:  
-            {trolly.caneweight} kg
+            {venue.caneweight} kg
             </Typography>
             <Typography className={classes.mb4} variant="h5" color="text.secondary">
             Trolly Amount:  
-            {trolly.amount} Rs
+            {venue.amount} Rs
             </Typography>
             
             <Typography variant="h5" color="text.secondary">
@@ -203,13 +195,13 @@ const TrollyDetailsPage = (props) => {
           <Typography variant="h6" color="text.secondary">
              Time :
 
-  {Moment(trolly.departureDate).format(' hh:mm a ')}
+  {Moment(venue.departureDate).format(' hh:mm a ')}
   </Typography>
   <Typography variant="h6" color="text.secondary">
 
    Date:
     
-  {Moment(trolly.departureDate).format(' d MMMM YYYY')}        
+  {Moment(venue.departureDate).format(' d MMMM YYYY')}        
     </Typography>
         </CardContent>
       </CardActionArea>
@@ -227,7 +219,7 @@ const TrollyDetailsPage = (props) => {
       size='large'
       type='submit'
       variant='contained'
-      onClick={submitHandler}
+      
 
      >
 Edit    </Button>

@@ -11,7 +11,7 @@ export const MillPageConfig = {
       component: AllMillsPage,
     },
     {
-      path: '/mills/add-mill',
+      path: '/vendor/add-vendor',
       exact: true,
       component: AddMillPage,
     },

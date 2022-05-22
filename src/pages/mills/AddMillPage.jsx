@@ -80,9 +80,8 @@ const AddMillPage = (props) => {
 
   return (
     <>
-      <Grid>.</Grid>
       <Typography className={classes.mb3} variant="h5" component="h1">
-        Add New Mill
+        Add New Vendor
       </Typography>
       <AdminBreadcrumbs path={history} />
       <div className={classes.root}>

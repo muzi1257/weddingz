@@ -93,11 +93,11 @@ const MillForm = ({ preloadedValues }) => {
         </Grid> */}
         <Grid item xs={12} md={4}>
           <Input
-            {...register('manager')}
-            id="manager"
+            {...register('slug')}
+            id="slug"
             type="text"
-            label="Manager"
-            name="manager"
+            label="Slug"
+            name="slug"
             error={!!errors.manager}
             helperText={errors?.manager?.message}
           />
