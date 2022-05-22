@@ -120,7 +120,7 @@ const AllTrollysPage = (props) => {
     },
     onRowClick: (rowData, rowState) => {
       console.log('click');
-      history.push(`/trolly/${rowData[0]}`);
+      history.push(`/getVenue/${rowData[0]}`);
     },
   };
   return (

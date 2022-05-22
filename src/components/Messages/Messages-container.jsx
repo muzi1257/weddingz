@@ -23,7 +23,7 @@ const MsgList = [
     id: 2,
     title: "Mohammad Admin",
     avatar:
-      "https://lh5.googleusercontent.com/-WqhFe4eMggE/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rdFUa5CK9Wi6g5qd8ZUt6apKFYSwA/photo.jpg?sz=328",
+      "https://ibb.co/F8FZDzd",
     subTitle: "Hi I'm Mohammad Admin"
   },
   {

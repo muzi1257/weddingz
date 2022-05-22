@@ -40,7 +40,7 @@ export const millDetailsReducer = (state = { vendor: {} }, action) => {
       return { loading: true, ...state };
 
     case MILL_DETAILS_SUCCESS:
-      return { loading: false, vendors:action.payload };
+      return { loading: false, vendors:action.payload.allVendors };
 
     case MILL_DETAILS_FAIL:
       return { loading: false, error: action.payload };

@@ -35,7 +35,6 @@ export const listMills = () => async (dispatch, getState) => {
     };
 
     const { data } = await api.get(`/v1/vendors/`, config);
-    console.log('sssssssssss',data)
     dispatch({
       type: MILL_LIST_SUCCESS,
       payload: data,
@@ -97,7 +96,7 @@ export const deleteMill = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await api.delete(`/vendors/delete/${id}/`, config);
+    const { data } = await api.delete(`/v1/vendors/delete/${id}/`, config);
 
     dispatch({
       type: MILL_DELETE_SUCCESS,

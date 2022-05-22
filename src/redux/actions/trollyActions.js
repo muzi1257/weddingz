@@ -108,7 +108,7 @@ export const deleteTrolly = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await api.delete(`/trolly/delete/${id}/`, config);
+    const { data } = await api.delete(`/v1/venues/${id}/`, config);
 
     dispatch({
       type: TROLLY_DELETE_SUCCESS,
