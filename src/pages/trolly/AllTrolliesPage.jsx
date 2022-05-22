@@ -125,7 +125,7 @@ const AllTrollysPage = (props) => {
   };
   return (
     <>
-      <Grid>.</Grid>
+      
       <Grid container className={classes.my3} alignItems="center">
         <Grid item className={classes.mRight}>
           <Typography variant="h5" component="h1">
