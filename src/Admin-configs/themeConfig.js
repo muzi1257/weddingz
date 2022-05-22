@@ -19,7 +19,7 @@ const getTheme = (theme) => {
       },
       MuiDrawer: {
         paper: {
-          background: theme.paletteType === 'dark' ? blueGrey.A900 : '#0d131d',
+          background: theme.paletteType === 'dark' ? blueGrey.A900 : '#FF6085',
           // this is where magic happens
           '& *': {
             color: theme.paletteType === 'dark' && 'rgba(255, 255, 255, 0.7)',

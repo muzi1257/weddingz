@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: theme.mixins.toolbar,
   logoBg: {
-    backgroundColor: theme.palette.type !== "dark" && "#18202c",
+    backgroundColor: theme.palette.type !== "dark" && "#FF6085",
     // backgroundColor: "#18202c"
   },
   logo: {
