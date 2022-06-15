@@ -34,9 +34,9 @@ import CalenderToday from '@material-ui/icons/CalendarToday';
 import MUIDataTable from 'mui-datatables';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  listMills,
-  deleteMill,
-} from '../../redux/actions/millActions';
+  listVendors,
+  deleteVendor,
+} from '../../redux/actions/vendorActions';
 import Image from 'material-ui-image';
 import Layout from '../../admin-layouts/layout/Layout';
 import { TableFooter, TableCell, TableRow } from "@material-ui/core";
@@ -153,15 +153,15 @@ const DashboardPage = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const millList = useSelector((state) => state.millList);
-  const { loading, error, mills, total,weight, totalrent, totalTrolly } = millList;
+  const vendorList = useSelector((state) => state.vendorList);
+  const { loading, error, vendors, total,weight, totalrent, totalVenue } = vendorList;
   
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
   useEffect(() => {
     if (userInfo ) {
-      dispatch(listMills());
+      dispatch(listVendors());
     }
   }, [dispatch, history, userInfo]);
   const options = {

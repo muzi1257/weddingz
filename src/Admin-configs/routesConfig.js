@@ -4,8 +4,8 @@ import { Redirect } from 'react-router-dom';
 import { DashboardPageConfig } from '../pages/dashboard/DashboardPageConfig';
 
 import { UsersPageConfig } from '../pages/users/UsersPageConfig';
-import { MillPageConfig } from '../pages/mills/MillPageConfig';
-import { TrollysPageConfig } from '../pages/trolly/TrollyPageConfig';
+import { VendorPageConfig } from '../pages/vendors/VendorPageConfig';
+import { VenuesPageConfig } from '../pages/venue/VenuePageConfig';
 
 import { Error404PageConfig } from '../pages/errors/404/Error404PageConfig';
 import { Error500PageConfig } from '../pages/errors/500/Error500PageConfig';
@@ -13,8 +13,8 @@ import { Error500PageConfig } from '../pages/errors/500/Error500PageConfig';
 const routeConfigs = [
   ...DashboardPageConfig.routes,
   ...UsersPageConfig.routes,
-  ...MillPageConfig.routes,
-  ...TrollysPageConfig.routes,
+  ...VendorPageConfig.routes,
+  ...VenuesPageConfig.routes,
 ];
 
 const routes = [
