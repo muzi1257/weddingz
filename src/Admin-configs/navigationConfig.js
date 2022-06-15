@@ -101,7 +101,7 @@ const navigationConfig = [
             id: 'create venue',
             title: 'Create Venue',
             type: 'item',
-            url: '/products/create-venue',
+            url: '/venue/add-venue',
             exact: true,
           },
         ],

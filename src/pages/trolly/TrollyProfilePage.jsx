@@ -208,6 +208,10 @@ const TrollyDetailsPage = (props) => {
             Area :  
             {venue?.area} 
             </Typography>
+            <Typography className={classes.mb4} variant="h6" color="text.secondary">
+            Description :  
+            {venue?.description} 
+            </Typography>
             
 
         </CardContent>

@@ -73,7 +73,7 @@ const AddTrollyPage = (props) => {
   return (
     <>
       <Typography className={classes.mb3} variant="h5" component="h1">
-        Add New Trolly
+        Add New Venue
       </Typography>
       <AdminBreadcrumbs path={history} />
       <div className={classes.root}>

@@ -63,35 +63,35 @@ const TrollyForm = ({ preloadedValues }) => {
       <Grid container spacing={3}>
         <Grid item xs={12} md={4}>
           <Input
-            {...register('number')}
-            id="number"
+            {...register('title')}
+            id="title"
             type="text"
-            label="Number"
-            name="number"
-            error={!!errors.number}
-            helperText={errors?.number?.message}
+            label="Title"
+            name="title"
+            error={!!errors.title}
+            helperText={errors?.title?.message}
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <Input
-            {...register('driver')}
-            id="driver"
+            {...register('slug')}
+            id="slug"
             type="text"
-            label="Driver"
-            name="driver"
-            error={!!errors.driver}
-            helperText={errors?.driver?.message}
+            label="Slug"
+            name="slug"
+            error={!!errors.slug}
+            helperText={errors?.slug?.message}
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <Input
-            {...register('acreName')}
-            id="acreName"
+            {...register('description')}
+            id="description"
             type="text"
-            label="Acre Name"
-            name="acreName"
-            error={!!errors.acreName}
-            helperText={errors?.acreName?.message}
+            label="Description"
+            name="description"
+            error={!!errors.description}
+            helperText={errors?.description?.message}
           />
         </Grid>
         <Grid item xs={12} md={4}>
@@ -107,35 +107,35 @@ const TrollyForm = ({ preloadedValues }) => {
         </Grid>
         <Grid item xs={12} md={4}>
           <Input
-            {...register('actualWeight')}
-            id="actualWeight"
+            {...register('price')}
+            id="price"
             type="number"
-            label="Actual Weight"
-            name="actualWeight"
-            error={!!errors.actualWeight}
-            helperText={errors?.actualWeight?.message}
+            label="Price"
+            name="price"
+            error={!!errors.price}
+            helperText={errors?.price?.message}
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <Input
-            {...register('loadedWeight')}
-            id="loadedWeight"
+            {...register('contactNo')}
+            id="contactNo"
             type="number"
-            label="Loaded Weight"
-            name="loadedWeight"
-            error={!!errors.loadedWeight}
-            helperText={errors?.loadedWeight?.message}
+            label="Contact Number"
+            name="contactNo"
+            error={!!errors.contactNo}
+            helperText={errors?.contactNo?.message}
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <Input
-            {...register('caneWeight')}
-            id="caneWeight"
+            {...register('category')}
+            id="category"
             type="number"
-            label="Cane Weight"
-            name="caneWeight"
-            error={!!errors.caneWeight}
-            helperText={errors?.caneWeight?.message}
+            label="Category"
+            name="category"
+            error={!!errors.category}
+            helperText={errors?.category?.message}
           />
         </Grid>{' '}
         <Grid item xs={12} md={4}>

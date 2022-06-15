@@ -9,7 +9,7 @@ export const TrollysPageConfig = {
       component: AllTrollysPage,
     },
     {
-      path: '/trolly/add-trolly',
+      path: '/venue/add-venue',
       exact: true,
       component: AddTrollyPage,
     },
