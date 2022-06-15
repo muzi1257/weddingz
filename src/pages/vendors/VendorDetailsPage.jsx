@@ -88,12 +88,7 @@ const VendorDetailsPage = (props) => {
           image={vendor?.photos[0]}
           alt={vendor?.image}
         />
-        <CardContent>
-          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Main
-          </Typography>
-          
-        </CardContent>
+        
         
       </CardActionArea>
       
@@ -109,12 +104,7 @@ const VendorDetailsPage = (props) => {
           image={vendor?.photos[1]}
           alt={vendor?.photos}
         />
-        <CardContent>
-          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Indoor
-          </Typography>
-          
-        </CardContent>
+        
       </CardActionArea>
      
     </Card>
@@ -128,12 +118,7 @@ const VendorDetailsPage = (props) => {
           image={vendor?.photos[2]}
           alt={vendor?.photo}
         />
-       <CardContent>
-          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Vendor
-          </Typography>
-          
-        </CardContent>
+     
       </CardActionArea>
       
     </Card>

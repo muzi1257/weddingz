@@ -106,12 +106,7 @@ const VenueDetailsPage = (props) => {
           image={venue?.photos[0]}
           alt={venue?.photo}
         />
-        <CardContent>
-          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Venue
-          </Typography>
-          
-        </CardContent>
+       
         
       </CardActionArea>
       
@@ -127,12 +122,7 @@ const VenueDetailsPage = (props) => {
           image={venue?.photos[1]}
           alt={venue?.photo}
         />
-        <CardContent>
-          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Indoor
-          </Typography>
-          
-        </CardContent>
+      
       </CardActionArea>
      
     </Card>
@@ -146,12 +136,7 @@ const VenueDetailsPage = (props) => {
           image={venue?.photos[2]}
           alt={venue?.photo}
         />
-       <CardContent>
-          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            hall
-          </Typography>
-          
-        </CardContent>
+      
       </CardActionArea>
       
     </Card>
