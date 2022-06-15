@@ -109,7 +109,7 @@ const EditMillPage = (props) => {
     <>
       <Grid>.</Grid>
       <Typography className={classes.mb3} variant="h5" component="h1">
-        Edit Mill : {mill.name}
+        Edit Vendor : {mill.name}
       </Typography>
       <AdminBreadcrumbs path={history} />
       <div className={classes.root}>

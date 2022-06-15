@@ -34,13 +34,13 @@ export const millListReducer = (state = {}, action) => {
   }
 };
 
-export const millDetailsReducer = (state = { vendor: {} }, action) => {
+export const millDetailsReducer = (state = {}, action) => {
   switch (action.type) {
     case MILL_DETAILS_REQUEST:
-      return { loading: true, ...state };
+      return { loading: true, data:[] };
 
     case MILL_DETAILS_SUCCESS:
-      return { loading: false, vendors:action.payload.allVendors };
+      return { loading: false, vendor:action.payload.data.vendor};
 
     case MILL_DETAILS_FAIL:
       return { loading: false, error: action.payload };

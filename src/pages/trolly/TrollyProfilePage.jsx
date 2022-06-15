@@ -91,7 +91,7 @@ const TrollyDetailsPage = (props) => {
   return (
     <>
       <Typography className={classes.mb3} variant="h5" component="h1">
-        Trolly Details : {venue.number}
+        Venue Details :
       </Typography>
       <AdminBreadcrumbs path={history} />
       <div className={classes.root}>
@@ -102,12 +102,12 @@ const TrollyDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          image={process.env.REACT_APP_API_URL + venue.image}
-          alt={venue.image}
+          // image={process.env.REACT_APP_API_URL + venue.image}
+          // alt={venue.image}
         />
         <CardContent>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Trolly
+            Venue
           </Typography>
           
         </CardContent>
@@ -123,8 +123,8 @@ const TrollyDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          image={process.env.REACT_APP_API_URL + venue.recieving_slip}
-          alt={venue.recieving_slip}
+          // image={process.env.REACT_APP_API_URL + venue.recieving_slip}
+          // alt={venue.recieving_slip}
         />
         <CardContent>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
@@ -142,12 +142,12 @@ const TrollyDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          image={process.env.REACT_APP_API_URL + venue.wieght_slip}
-          alt={venue.wieght_slip}
+          // image={process.env.REACT_APP_API_URL + venue.wieght_slip}
+          // alt={venue.wieght_slip}
         />
        <CardContent>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Weight
+            W
           </Typography>
           
         </CardContent>
@@ -160,49 +160,38 @@ const TrollyDetailsPage = (props) => {
       <CardActionArea>
         <CardContent>
           <Typography className={classes.mb3} gutterBottom variant="h4" component="div">
-            Trolly Number:
-            {venue.number}
+            Venue Number:
+            {/* {venue.number} */}
           </Typography>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Trolly Acre Name:
-            {venue.acreName}
+            Venue :
+            {/* {venue.acreName} */}
           </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
            Driver:
-            {venue.driver}
+            {/* {venue.driver} */}
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
             Actual Weight (Before Loading):
-            {venue.venueWeight} kg
+            {/* {venue.venueWeight} kg */}
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
             Loaded Weight:
-            {venue.loadedWeight} kg
+            {/* {venue.loadedWeight} kg */}
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
             Cane Weight:  
-            {venue.caneweight} kg
+            {/* {venue.caneweight} kg */}
             </Typography>
             <Typography className={classes.mb4} variant="h5" color="text.secondary">
             Trolly Amount:  
-            {venue.amount} Rs
+            {/* {venue.amount} Rs */}
             </Typography>
             
             <Typography variant="h5" color="text.secondary">
             Trolly Departure
             </Typography>
 
-          <Typography variant="h6" color="text.secondary">
-             Time :
-
-  {Moment(venue.departureDate).format(' hh:mm a ')}
-  </Typography>
-  <Typography variant="h6" color="text.secondary">
-
-   Date:
-    
-  {Moment(venue.departureDate).format(' d MMMM YYYY')}        
-    </Typography>
         </CardContent>
       </CardActionArea>
       

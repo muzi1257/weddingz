@@ -16,7 +16,7 @@ export const MillPageConfig = {
       component: AddMillPage,
     },
     {
-      path: '/mills/:id',
+      path: '/v1/vendors/:id',
       exact: true,
       component: MillDetailsPage,
     },

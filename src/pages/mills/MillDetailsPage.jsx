@@ -46,37 +46,25 @@ const useStyles = makeStyles((theme) => ({
   // }
 }));
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
 const MillDetailsPage = (props) => {
   const match = props.match;
   const { history } = props;
   const millId = match.params.id;
 
-  const [title, setName] = useState('');
-  const [address, setAddress] = useState('');
-  const [Manager, setManager] = useState('');
-  const [phone_number, setPhone_number] = useState('');
-  const [pic, setPic] = useState('');
-
+  
 
   const dispatch = useDispatch();
 
   const millDetails = useSelector((state) => state.millDetails);
-  const { error, loading, mill } = millDetails;
+  const { error, loading, vendor } = millDetails;
+  console.log(vendor)
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-
-  const millUpdate = useSelector((state) => state.millUpdate);
-  const {
-    error: errorUpdate,
-    loading: loadingUpdate,
-    success: successUpdate,
-  } = millUpdate;
 
  
         
     useEffect(() => {
-          if (userInfo || !mill.name || mill._id !== Number(millId)) {
+          if (userInfo) {
             dispatch(listMillDetails(millId));
           } else {
             history.push('/login');
@@ -85,11 +73,11 @@ const MillDetailsPage = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    history.push(`/mills/${mill._id}/edit`);
+    history.push(`/mills/${vendor._id}/edit`);
   };
   const trollyHandler = (e) => {
     e.preventDefault();
-    history.push(`/mills/${mill._id}/add-trolly`);
+    history.push(`/mills/${vendor._id}/add-trolly`);
   };
 
   const classes = useStyles();
@@ -97,7 +85,7 @@ const MillDetailsPage = (props) => {
   return (
     <>
       <Typography className={classes.mb3} variant="h5" component="h1">
-      Mill : {mill.name}
+      Vendor : 
       <Typography align='center'>
     <Button
       color='primary'
@@ -107,7 +95,7 @@ const MillDetailsPage = (props) => {
       onClick={trollyHandler}
 
      >
-      Add New Trolly</Button>
+      Add New Vendor</Button>
       </Typography>
       </Typography>
       <AdminBreadcrumbs path={history} />
@@ -115,28 +103,22 @@ const MillDetailsPage = (props) => {
       <Grid item lg={8} xs={11}>
           <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          height="250"
-          image={process.env.REACT_APP_API_URL + mill.image}
-          alt={mill.image}
-        />
         <CardContent>
           <Typography className={classes.mb3} gutterBottom variant="h3" component="div">
-            Mill Name:
-            {mill.name}
+            Vendor Name:
+            {/* {vendor.category} */}
           </Typography>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Mill Address:
-            {mill.address}
+          Vendor Address:
+            {/* {vendor.address} */}
           </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
            Manager:
-            {mill.manager}
+            {/* {vendor.manager} */}
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
             Phone Number:
-            {mill.phone_number}
+            {/* {vendor.phone_number} */}
             </Typography>
           
         </CardContent>

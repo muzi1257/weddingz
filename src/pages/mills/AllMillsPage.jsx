@@ -109,7 +109,6 @@ const AllMillsPage = (props) => {
       });
     },
     onRowClick: (rowData, rowState) => {
-      console.log('click');
       history.push(`/v1/vendors/${rowData[0]}`);
     },
   };

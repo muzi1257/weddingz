@@ -14,7 +14,7 @@ export const TrollysPageConfig = {
       component: AddTrollyPage,
     },
     {
-      path: '/trolly/:id',
+      path: '/getVenue/:id',
       exact: true,
       component: TrollyDetailsPage,
     },
