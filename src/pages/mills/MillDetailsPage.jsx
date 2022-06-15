@@ -99,26 +99,153 @@ const MillDetailsPage = (props) => {
       </Typography>
       </Typography>
       <AdminBreadcrumbs path={history} />
-      <Grid container spacing={6} justify="center" alignItems="center" direction="row" style={{marginTop:'3'}}>
+      <div className={classes.root}>
+        <Grid alignContent="center" container spacing={2}>
+        <Grid item xs={12} md={4}>
+        <Card sx={{ maxWidth: 345 }}>
+        <CardActionArea>
+        <CardMedia
+          component="img"
+          height="350"
+          image={vendor?.photos[0]}
+          alt={vendor?.image}
+        />
+        <CardContent>
+          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
+            Main
+          </Typography>
+          
+        </CardContent>
+        
+      </CardActionArea>
+      
+    </Card>
+              </Grid>
+              <Grid item xs={12} md={4}>
+
+              <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="350"
+          image={vendor?.photos[1]}
+          alt={vendor?.photos}
+        />
+        <CardContent>
+          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
+            Indoor
+          </Typography>
+          
+        </CardContent>
+      </CardActionArea>
+     
+    </Card>
+    </Grid>
+    <Grid item xs={12} md={4}>
+          <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="350"
+          image={vendor?.photos[2]}
+          alt={vendor?.photo}
+        />
+       <CardContent>
+          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
+            Vendor
+          </Typography>
+          
+        </CardContent>
+      </CardActionArea>
+      
+    </Card>
+              </Grid>
+              <Grid item xs={12} md={12}>
+      <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardContent>
+          <Typography className={classes.mb3} gutterBottom variant="h4" component="div">
+            Vendor Name :
+            {vendor?.category}
+          </Typography>
+          <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
+            Vendor Ratings :
+            {vendor?.ratingsAverage}
+          </Typography>
+          <Typography className={classes.mb4} variant="h5" color="text.secondary">
+          Payment Terms :
+            {vendor?.paymentTerms}
+            </Typography>
+          <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Vendor Price:
+            {vendor?.price}
+            </Typography>
+         
+            
+            <Typography variant="h5" color="text.secondary">
+            Trolly Departure
+            </Typography>
+
+        </CardContent>
+      </CardActionArea>
+      
+    </Card>
+              </Grid>
+      
+              <Grid alignContent='center' item xs={12} md={4}>
+      </Grid>
+     
+        </Grid>
+        <Typography align='center'>
+    <Button
+      color='primary'
+      size='large'
+      type='submit'
+      variant='contained'
+      
+
+     >
+Edit    </Button>
+  </Typography>
+          
+      </div>
+      
+      {/* <Grid container spacing={6} justify="center" alignItems="center" direction="row" style={{marginTop:'3'}}>
       <Grid item lg={8} xs={11}>
           <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
+      <CardMedia
+          component="img"
+          height="250"
+          image={vendor?.photos[0]}
+          alt={vendor?.image}
+        />
         <CardContent>
           <Typography className={classes.mb3} gutterBottom variant="h3" component="div">
             Vendor Name:
-            {/* {vendor.category} */}
+
+            {vendor?.category}
           </Typography>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-          Vendor Address:
-            {/* {vendor.address} */}
+          Vendor Ratings :
+            {vendor?.ratingsAverage}
           </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
-           Manager:
-            {/* {vendor.manager} */}
+           Payment Terms:
+            {vendor?.paymentTerms}
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
-            Phone Number:
-            {/* {vendor.phone_number} */}
+            Price:
+            {vendor?.price}
+            </Typography>
+            <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Approved:
+            {vendor?.isApproved[0]}
+            </Typography>
+            <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Featured:
+            {vendor?.isFeatured}
+            
             </Typography>
           
         </CardContent>
@@ -135,7 +262,7 @@ const MillDetailsPage = (props) => {
       <div className={classes.root}>
       
           
-      </div>
+      </div> */}
 
      
     </>
