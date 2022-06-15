@@ -184,7 +184,7 @@ export const getTrollyDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await api.get(`/trolly/${id}/`, config);
+    const { data } = await api.get(`/v1/getVenue/${id}/`, config);
 
     dispatch({
       type: TROLLY_DETAILS_SUCCESS,

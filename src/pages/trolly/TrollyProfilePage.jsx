@@ -59,31 +59,32 @@ const useStyles = makeStyles((theme) => ({
   // }
 }));
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
 const TrollyDetailsPage = (props) => {
   const match = props.match;
   const { history } = props;
   const trollyId = match.params.id;
 
   
+
   const dispatch = useDispatch();
 
-  const trollyList = useSelector((state) => state.trollyList);
-  const { loading, error, venue } = trollyList;
-  const trollyUpdate = useSelector((state) => state.trollyUpdate);
-  const {
-    error: errorUpdate,
-    loading: loadingUpdate,
-    success: successUpdate,
-  } = trollyUpdate;
+  const trollyDetails = useSelector((state) => state.trollyDetails);
+  const { error, loading, venue } = trollyDetails;
+  console.log(venue)
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
-  useEffect(() => {
-    if (successUpdate) {
-      
-        dispatch(getTrollyDetails(trollyId));
-      }
-    
-  }, [ trollyId, successUpdate, history]);
+ 
+        
+    useEffect(() => {
+          if (userInfo) {
+            dispatch(getTrollyDetails(trollyId));
+          } else {
+            history.push('/login');
+          }
+        }, [dispatch, history, userInfo]);
+
+
 
 
   const classes = useStyles();
@@ -91,7 +92,7 @@ const TrollyDetailsPage = (props) => {
   return (
     <>
       <Typography className={classes.mb3} variant="h5" component="h1">
-        Venue Details :
+        Venue :
       </Typography>
       <AdminBreadcrumbs path={history} />
       <div className={classes.root}>
@@ -102,8 +103,8 @@ const TrollyDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          // image={process.env.REACT_APP_API_URL + venue.image}
-          // alt={venue.image}
+          image={venue?.photos[0]}
+          alt={venue?.photo}
         />
         <CardContent>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
@@ -123,12 +124,12 @@ const TrollyDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          // image={process.env.REACT_APP_API_URL + venue.recieving_slip}
-          // alt={venue.recieving_slip}
+          image={venue?.photos[1]}
+          alt={venue?.photo}
         />
         <CardContent>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Reciept
+            Indoor
           </Typography>
           
         </CardContent>
@@ -142,12 +143,12 @@ const TrollyDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          // image={process.env.REACT_APP_API_URL + venue.wieght_slip}
-          // alt={venue.wieght_slip}
+          image={venue?.photos[2]}
+          alt={venue?.photo}
         />
        <CardContent>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            W
+            hall
           </Typography>
           
         </CardContent>
@@ -159,38 +160,55 @@ const TrollyDetailsPage = (props) => {
       <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardContent>
-          <Typography className={classes.mb3} gutterBottom variant="h4" component="div">
-            Venue Number:
-            {/* {venue.number} */}
+          <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
+            Venue Title : 
+            {venue?.title} 
           </Typography>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Venue :
-            {/* {venue.acreName} */}
+             Number : 
+            {venue?._id}
           </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
-           Driver:
-            {/* {venue.driver} */}
+           Price : 
+            {venue?.price}
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
-            Actual Weight (Before Loading):
-            {/* {venue.venueWeight} kg */}
+            Contact Number : 
+            {venue?.contactNo} 
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
-            Loaded Weight:
-            {/* {venue.loadedWeight} kg */}
+            Category : 
+            {venue?.category} 
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
-            Cane Weight:  
-            {/* {venue.caneweight} kg */}
+            Catering Policy :  
+            {venue?.cateringPolicy} 
             </Typography>
             <Typography className={classes.mb4} variant="h5" color="text.secondary">
-            Trolly Amount:  
-            {/* {venue.amount} Rs */}
+            DJ Policy :  
+            {venue?.DJPolicy} 
+            </Typography>
+            <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Decor Policy :  
+            {venue?.decorPolicy} 
+            </Typography>
+            <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Refund Policy :  
+            {venue?.refundPolicy} 
+            </Typography>
+            <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Kitchen :  
+            {venue?.kitchen} 
+            </Typography>
+            <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Parking :  
+            {venue?.parking} 
+            </Typography>
+            <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Area :  
+            {venue?.area} 
             </Typography>
             
-            <Typography variant="h5" color="text.secondary">
-            Trolly Departure
-            </Typography>
 
         </CardContent>
       </CardActionArea>

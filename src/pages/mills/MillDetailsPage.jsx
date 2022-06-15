@@ -77,7 +77,7 @@ const MillDetailsPage = (props) => {
   };
   const trollyHandler = (e) => {
     e.preventDefault();
-    history.push(`/mills/${vendor._id}/add-trolly`);
+    history.push(`/mills/${vendor._id}/add-vendor`);
   };
 
   const classes = useStyles();
@@ -86,17 +86,7 @@ const MillDetailsPage = (props) => {
     <>
       <Typography className={classes.mb3} variant="h5" component="h1">
       Vendor : 
-      <Typography align='center'>
-    <Button
-      color='primary'
-      size='large'
-      type='submit'
-      variant='contained'
-      onClick={trollyHandler}
-
-     >
-      Add New Vendor</Button>
-      </Typography>
+      
       </Typography>
       <AdminBreadcrumbs path={history} />
       <div className={classes.root}>
@@ -164,7 +154,7 @@ const MillDetailsPage = (props) => {
       <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardContent>
-          <Typography className={classes.mb3} gutterBottom variant="h4" component="div">
+        <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
             Vendor Name :
             {vendor?.category}
           </Typography>
@@ -177,13 +167,20 @@ const MillDetailsPage = (props) => {
             {vendor?.paymentTerms}
             </Typography>
           <Typography className={classes.mb4} variant="h5" color="text.secondary">
-            Vendor Price:
+            Vendor Price :
             {vendor?.price}
             </Typography>
-         
-            
-            <Typography variant="h5" color="text.secondary">
-            Trolly Departure
+            <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Contact Number :
+            {vendor?.contactNo}
+            </Typography>
+            <Typography className={classes.mb4} variant="h5" color="text.secondary">
+            Category :
+            {vendor?.category}
+            </Typography>
+            <Typography className={classes.mb4} variant="h6" color="text.secondary">
+            Description :
+            {vendor?.description}
             </Typography>
 
         </CardContent>
@@ -196,7 +193,18 @@ const MillDetailsPage = (props) => {
       </Grid>
      
         </Grid>
-        <Typography align='center'>
+        <Typography align='center' space-between = '5'>
+        
+    <Button
+      color='primary'
+      size='large'
+      type='submit'
+      variant='contained'
+      onClick={trollyHandler}
+
+     >
+      Add New Vendor</Button>
+     
     <Button
       color='primary'
       size='large'
