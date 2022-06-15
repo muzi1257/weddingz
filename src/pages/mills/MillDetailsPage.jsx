@@ -158,6 +158,10 @@ const MillDetailsPage = (props) => {
             Vendor Name :
             {vendor?.category}
           </Typography>
+          <Typography className={classes.mb4} variant="h5" color="text.secondary" align='center'>
+            Approved  :
+            {String(vendor?.isApproved)}
+            </Typography>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
             Vendor Ratings :
             {vendor?.ratingsAverage}
@@ -178,6 +182,10 @@ const MillDetailsPage = (props) => {
             Category :
             {vendor?.category}
             </Typography>
+            <Typography className={classes.mb4} variant="h5" color="text.secondary" >
+            Featured  :
+            {String(vendor?.isFeatured)}
+            </Typography>
             <Typography className={classes.mb4} variant="h6" color="text.secondary">
             Description :
             {vendor?.description}
@@ -193,27 +201,17 @@ const MillDetailsPage = (props) => {
       </Grid>
      
         </Grid>
-        <Typography align='center' space-between = '5'>
-        
-    <Button
-      color='primary'
-      size='large'
-      type='submit'
-      variant='contained'
-      onClick={trollyHandler}
-
-     >
-      Add New Vendor</Button>
+        <Typography align='center' >
+  
      
     <Button
       color='primary'
       size='large'
       type='submit'
       variant='contained'
-      
 
      >
-Edit    </Button>
+Approve This Vendor </Button>
   </Typography>
           
       </div>
