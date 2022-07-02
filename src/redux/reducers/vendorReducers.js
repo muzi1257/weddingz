@@ -8,6 +8,9 @@ import {
   VENDOR_DELETE_REQUEST,
   VENDOR_DELETE_SUCCESS,
   VENDOR_DELETE_FAIL,
+  VENDOR_APPROVE_REQUEST,
+  VENDOR_APPROVE_SUCCESS,
+  VENDOR_APPROVE_FAIL,
   VENDOR_CREATE_REQUEST,
   VENDOR_CREATE_SUCCESS,
   VENDOR_CREATE_FAIL,
@@ -59,6 +62,21 @@ export const vendorDeleteReducer = (state = {}, action) => {
       return { loading: false, success: true };
 
     case VENDOR_DELETE_FAIL:
+      return { loading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+export const vendorApproveReducer = (state = {}, action) => {
+  switch (action.type) {
+    case VENDOR_APPROVE_REQUEST:
+      return { loading: true ,  };
+
+    case VENDOR_APPROVE_SUCCESS:
+      return { loading: false, success: true };
+
+    case VENDOR_APPROVE_FAIL:
       return { loading: false, error: action.payload };
 
     default:

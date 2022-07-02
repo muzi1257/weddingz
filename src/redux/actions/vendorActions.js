@@ -9,6 +9,9 @@ import {
   VENDOR_DELETE_REQUEST,
   VENDOR_DELETE_SUCCESS,
   VENDOR_DELETE_FAIL,
+  VENDOR_APPROVE_REQUEST,
+  VENDOR_APPROVE_SUCCESS,
+  VENDOR_APPROVE_FAIL,
   VENDOR_CREATE_REQUEST,
   VENDOR_CREATE_SUCCESS,
   VENDOR_CREATE_FAIL,
@@ -185,7 +188,7 @@ export const updateVendor = (vendor) => async (dispatch, getState) => {
 export const approveVendor = (id) => async (dispatch, getState) => {
   try {
     dispatch({
-      type: VENDOR_DELETE_REQUEST,
+      type: VENDOR_APPROVE_REQUEST,
     });
 
     const {
@@ -199,14 +202,14 @@ export const approveVendor = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await api.put(`/v1/approve/${id}/`, config);
+    const { data } = await api.patch(`/v1/approve/${id}/`, config);
 
     dispatch({
-      type: VENDOR_DELETE_SUCCESS,
+      type: VENDOR_APPROVE_SUCCESS,
     });
   } catch (error) {
     dispatch({
-      type: VENDOR_DELETE_FAIL,
+      type: VENDOR_APPROVE_FAIL,
       payload:
         error.response && error.response.data.detail
           ? error.response.data.detail

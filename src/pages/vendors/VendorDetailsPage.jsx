@@ -5,7 +5,9 @@ import AdminBreadcrumbs from '../../components/AdminBreadcrumbs/AdminBreadcrumbs
 import { Typography, Grid, makeStyles, TextField ,Card, CardActions, CardActionArea,CardMedia, CardContent } from '@material-ui/core';
 import {
   listVendorDetails,
+  approveVendor,
 } from '../../redux/actions/vendorActions';
+import { id } from 'date-fns/locale';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -60,8 +62,8 @@ const VendorDetailsPage = (props) => {
         }, [dispatch, history, userInfo]);
 
   const submitHandler = (e) => {
-    e.preventDefault();
-    history.push(`/vendors/${vendor._id}/edit`);
+    dispatch(approveVendor(vendor._id));
+    history.push(`/v1/vendors/${id}`)
   };
   const venueHandler = (e) => {
     e.preventDefault();
@@ -182,7 +184,7 @@ const VendorDetailsPage = (props) => {
       size='large'
       type='submit'
       variant='contained'
-
+      onClick={submitHandler}
      >
 Approve This Vendor </Button>
   </Typography>

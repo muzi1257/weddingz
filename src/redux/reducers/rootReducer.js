@@ -11,6 +11,7 @@ import {
   vendorListReducer,
   vendorDetailsReducer,
   vendorDeleteReducer,
+  vendorApproveReducer,
   vendorCreateReducer,
   vendorUpdateReducer,
 } from './vendorReducers';
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
   vendorList: vendorListReducer,
   vendorDetails: vendorDetailsReducer,
   vendorDelete: vendorDeleteReducer,
+  vendorApprove: vendorApproveReducer,
   vendorCreate: vendorCreateReducer,
   vendorUpdate: vendorUpdateReducer,
 
