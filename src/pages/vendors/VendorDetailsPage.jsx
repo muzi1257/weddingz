@@ -47,7 +47,6 @@ const VendorDetailsPage = (props) => {
 
   const vendorDetails = useSelector((state) => state.vendorDetails);
   const { error, loading, vendor } = vendorDetails;
-  console.log(vendor)
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -62,8 +61,8 @@ const VendorDetailsPage = (props) => {
         }, [dispatch, history, userInfo]);
 
   const submitHandler = (e) => {
-    dispatch(approveVendor(vendor._id));
-    history.push(`/v1/vendors/${id}`)
+    dispatch(approveVendor(id));
+    history.push(`/v1/vendors/${vendor._id}`)
   };
   const venueHandler = (e) => {
     e.preventDefault();
