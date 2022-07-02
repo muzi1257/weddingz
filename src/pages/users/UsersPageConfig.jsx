@@ -6,7 +6,7 @@ import UserProfilePage from './UserProfilePage';
 export const UsersPageConfig = {
   routes: [
     {
-      path: '/users',
+      path: '/users/getAllUsers/',
       exact: true,
       component: AllUsersPage,
     },

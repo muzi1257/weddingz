@@ -63,7 +63,7 @@ const AddUserPage = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(createUser(name, email, password, is_staff));
-    history.push('/users');
+    history.push('/users/getAllUsers/');
   };
 
   const [checked, setChecked] = React.useState(true);

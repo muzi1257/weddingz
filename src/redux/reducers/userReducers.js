@@ -71,13 +71,13 @@ export const userCreateReducer = (state = {}, action) => {
   }
 };
 
-export const userListReducer = (state = { users: [] }, action) => {
+export const userListReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_LIST_REQUEST:
-      return { loading: true };
+      return { loading: true ,data: []};
 
     case USER_LIST_SUCCESS:
-      return { loading: false, users: action.payload };
+      return { loading: false, users: action.payload.data.users };
 
     case USER_LIST_FAIL:
       return { loading: false, error: action.payload };

@@ -76,7 +76,7 @@ const UserProfilePage = (props) => {
   useEffect(() => {
     if (successUpdate) {
       dispatch({ type: USER_UPDATE_RESET });
-      history.push('/users');
+      history.push('/users/getAllUsers/');
     } else {
       if (!user.name || user._id !== Number(userId)) {
         dispatch(getUserDetails(userId));
@@ -94,7 +94,7 @@ const UserProfilePage = (props) => {
   };
   const alluserpageHandler = (e) => {
     e.preventDefault();
-    history.push(`/users`);
+    history.push(`/users/getAllUsers/`);
   };
 
   const classes = useStyles();

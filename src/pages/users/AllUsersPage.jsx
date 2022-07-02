@@ -48,15 +48,14 @@ const columns = [
     },
   },
   {
-    name: 'isAdmin',
-    label: 'Admin',
+    name: 'role',
+    label: 'Role',
     options: {
-      filter: false,
-      customBodyRender: (value, tableMeta, updateValue) => {
-        return <>{value === true ? <CheckIcon /> : <ClearIcon />}</>;
-      },
+      filter: true,
+      sort: false,
     },
   },
+  
 ];
 
 const AllUsersPage = (props) => {

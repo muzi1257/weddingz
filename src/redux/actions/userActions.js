@@ -122,7 +122,7 @@ export const listUsers = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await api.get('/users/', config);
+    const { data } = await api.get('/users/getAllUsers/', config);
 
     dispatch({
       type: USER_LIST_SUCCESS,

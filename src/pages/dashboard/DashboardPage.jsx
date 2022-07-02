@@ -71,18 +71,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '36px',
   },
   visitorChart: {
-    // height: "150px"
   },
-  // root: {
-  //   "& .appear-item": {
-  //     display: "none"
-  //   },
-  //   "&:hover .appear-item": {
-  //     display: "block"
-  //   }
-  // },
+ 
   root: {
-    // maxWidth: 345,
     margin: theme.spacing(0.5),
     padding: theme.spacing(0.8),
     borderRadius: theme.spacing(0),
@@ -154,8 +145,8 @@ const DashboardPage = (props) => {
   const dispatch = useDispatch();
 
   const vendorList = useSelector((state) => state.vendorList);
-  const { loading, error, vendors, total,weight, totalrent, totalVenue } = vendorList;
-  
+  const { loading, error, vendors,} = vendorList;
+
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 

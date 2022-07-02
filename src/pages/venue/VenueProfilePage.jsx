@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import JoditEditor from 'jodit-react';
-import Checkbox from '@material-ui/core/Checkbox';
-import { withStyles } from '@material-ui/core/styles';
-import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
-// import { EditorState, convertToRow } from "draft-js";
-// import { Editor } from "react-draft-wysiwyg";
-// import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { useDispatch, useSelector } from 'react-redux';
 import AdminLayout from '../../components/AdminLayout/AdminLayout';
 import CardContent from '@material-ui/core/CardContent';

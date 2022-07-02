@@ -39,16 +39,10 @@ const navigationConfig = [
             id: 'all users',
             title: 'All Users',
             type: 'item',
-            url: '/users',
+            url: '/users/getAllUsers/',
             exact: true,
           },
-          {
-            id: 'add user',
-            title: 'Add User',
-            type: 'item',
-            url: '/users/add-user',
-            exact: true,
-          },
+          
         ],
       },
 
@@ -70,13 +64,7 @@ const navigationConfig = [
             url: '/vendors',
             exact: true,
           },
-          {
-            id: 'add vendor',
-            title: 'Add Vendor',
-            type: 'item',
-            url: '/vendor/add-vendor',
-            exact: true,
-          },
+          
         ],
       },
       {
@@ -97,13 +85,7 @@ const navigationConfig = [
             url: '/venues',
             exact: true,
           },
-          {
-            id: 'create venue',
-            title: 'Create Venue',
-            type: 'item',
-            url: '/venue/add-venue',
-            exact: true,
-          },
+          
         ],
       },
     ],
