@@ -10,6 +10,9 @@ import {
   VENUE_DELETE_REQUEST,
   VENUE_DELETE_SUCCESS,
   VENUE_DELETE_FAIL,
+  VENUE_FEATURE_REQUEST,
+  VENUE_FEATURE_SUCCESS,
+  VENUE_FEATURE_FAIL,
   VENUE_UPDATE_REQUEST,
   VENUE_UPDATE_SUCCESS,
   VENUE_UPDATE_FAIL,
@@ -114,6 +117,22 @@ export const venueUpdateReducer = (state = { venue: {} }, action) => {
 
     case VENUE_UPDATE_RESET:
       return { venue: {} };
+
+    default:
+      return state;
+  }
+};
+
+export const venueFeatureReducer = (state = {}, action) => {
+  switch (action.type) {
+    case VENUE_FEATURE_REQUEST:
+      return { loading: true };
+
+    case VENUE_FEATURE_SUCCESS:
+      return { loading: false, success: true };
+
+    case VENUE_FEATURE_FAIL:
+      return { loading: false, error: action.payload };
 
     default:
       return state;

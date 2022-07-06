@@ -10,6 +10,9 @@ import {
   VENUE_DELETE_REQUEST,
   VENUE_DELETE_SUCCESS,
   VENUE_DELETE_FAIL,
+  VENUE_FEATURE_REQUEST,
+  VENUE_FEATURE_SUCCESS,
+  VENUE_FEATURE_FAIL,
   VENUE_UPDATE_REQUEST,
   VENUE_UPDATE_SUCCESS,
   VENUE_UPDATE_FAIL,
@@ -200,3 +203,37 @@ export const getVenueDetails = (id) => async (dispatch, getState) => {
     });
   }
 };
+export const featureVenue = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: VENUE_FEATURE_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    const { data } = await api.patch(`/v1/venues/updateStatus/${id}/`, config);
+
+    dispatch({
+      type: VENUE_FEATURE_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: VENUE_FEATURE_FAIL,
+      payload:
+        error.response && error.response.data.detail
+          ? error.response.data.detail
+          : error.message,
+    });
+  }
+};
+

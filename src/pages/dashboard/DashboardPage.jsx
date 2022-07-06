@@ -85,59 +85,6 @@ const useStyles = makeStyles((theme) => ({
     height: 240,
   },
 }));
-const columns = [
-  {
-    name: '_id',
-    label: 'ID',
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: 'title',
-    label: 'Vendor',
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: 'price',
-    label: 'Price',
-    options: {
-      filter: true,
-      sort: false,
-    },
-  },
-  {
-    name: 'ratingsAverage',
-    label: 'Ratings Average',
-    options: {
-      filter: true,
-      sort: false,
-    },
-  },
-  {
-    name: 'category',
-    label: 'Category',
-    options: {
-      filter: true,
-      sort: false,
-    },
-  },
-  {
-    name: 'isApproved',
-    label: 'Approved',
-    options: {
-      filter: false,
-      customBodyRender: (value, tableMeta, updateValue) => {
-        return <>{value === true ? <CheckIcon /> : <ClearIcon />}</>;
-      },
-    },
-  },
-  
-];
 
 const DashboardPage = (props) => {
   const { history } = props;
@@ -174,6 +121,34 @@ const DashboardPage = (props) => {
           <Grid item xs={12}>
             
           </Grid>
+          <Grid item xs={12} md={6}>
+          <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="350"
+         // image={blog?.photos[4]}
+         // alt={blog?.photo}
+        />
+      
+      </CardActionArea>
+      
+    </Card>
+              </Grid>
+              <Grid item xs={12} md={6}>
+          <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="350"
+         // image={blog?.photos[4]}
+         // alt={blog?.photo}
+        />
+      
+      </CardActionArea>
+      
+    </Card>
+              </Grid>
           <Grid item xs={12}>
             <Paper
               className={clsx(classes.paddingPaper, classes.mt)}

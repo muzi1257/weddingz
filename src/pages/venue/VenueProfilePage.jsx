@@ -16,9 +16,11 @@ import AddPostRightPanels from '../../components/extra/AddPostRightPanels/AddPos
 import {
   getVenueDetails,
   updateVenue,
+  featureVenue,
 } from '../../redux/actions/venueActions';
 import { VENUE_UPDATE_RESET } from '../../redux/constants/venueConstants';
 import Image from '@material-ui/core/ImageList';
+import { id } from 'date-fns/locale';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -77,7 +79,11 @@ const VenueDetailsPage = (props) => {
           }
         }, [dispatch, history, userInfo]);
 
-
+        const submitHandler = (e) => {
+          console.log(venue._id)
+          dispatch(featureVenue(venue._id));
+         // history.push(`/venues/`)
+        };
 
 
   const classes = useStyles();
@@ -208,10 +214,10 @@ const VenueDetailsPage = (props) => {
       size='large'
       type='submit'
       variant='contained'
-      
+      onClick={submitHandler}
 
      >
-Edit    </Button>
+Make Venue Featured    </Button>
   </Typography>
           
       </div>

@@ -19,6 +19,7 @@ import {
   venueListReducer,
   venueDetailsReducer,
   venueDeleteReducer,
+  venueFeatureReducer,
   venueCreateReducer,
   venueUpdateReducer,
 } from './venueReducers';
@@ -45,6 +46,8 @@ const rootReducer = combineReducers({
   venueDelete: venueDeleteReducer,
   venueCreate: venueCreateReducer,
   venueUpdate: venueUpdateReducer,
+  venueFeature: venueFeatureReducer,
+  
 
   blogList: blogListReducer,
   blogDetails: blogDetailsReducer,
