@@ -11,6 +11,7 @@ import {
   CardMedia,
   CardActionArea,
   Card,
+  CardActions
 } from '@material-ui/core';
 import AdminBreadcrumbs from '../../components/AdminBreadcrumbs/AdminBreadcrumbs';
 import AdminChart from '../../components/AdminChart/AdminChart';
@@ -42,6 +43,7 @@ import Layout from '../../admin-layouts/layout/Layout';
 import { TableFooter, TableCell, TableRow } from "@material-ui/core";
 import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
+import { CenterFocusStrongOutlined } from '@material-ui/icons';
 
 
 
@@ -116,39 +118,67 @@ const DashboardPage = (props) => {
 
       
 
-      <Grid container spacing={2}>
-        <Grid item container xs={12} sm={12}>
-          <Grid item xs={12}>
+      <Grid container spacing={2} alignContent="center">
+      <Grid item xs={12} md={6} >
             
-          </Grid>
-          <Grid item xs={12} md={6}>
-          <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="350"
-         // image={blog?.photos[4]}
-         // alt={blog?.photo}
-        />
-      
-      </CardActionArea>
-      
-    </Card>
-              </Grid>
-              <Grid item xs={12} md={6}>
-          <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="350"
-         // image={blog?.photos[4]}
-         // alt={blog?.photo}
-        />
-      
-      </CardActionArea>
-      
-    </Card>
-              </Grid>
+            <Card sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+              <CardContent>
+              <Box height={150} alignContent="center">
+                  <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
+                  Number of Vendors : 
+                  
+                </Typography>
+                <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
+                   
+                  30 
+                </Typography>
+                  </Box>
+              </CardContent>
+            </CardActionArea>
+            
+          </Card>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+            <Card sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+              <CardContent>
+              <Box height={150} alignContent="center">
+                  <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
+                  Number of Venues : 
+                  
+                </Typography>
+                <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
+                   
+                  15 
+                </Typography>
+                  </Box>
+              </CardContent>
+            </CardActionArea>
+            
+          </Card>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+            <Card sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+              <CardContent>
+              <Box height={150} alignContent="center">
+                  <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
+                  Number of Blogs : 
+                  
+                </Typography>
+                <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
+                   
+                  15 
+                </Typography>
+                  </Box>
+              </CardContent>
+            </CardActionArea>
+            
+          </Card>
+                    </Grid>
+        <Grid item container xs={12} sm={12}>
+         
           <Grid item xs={12}>
             <Paper
               className={clsx(classes.paddingPaper, classes.mt)}

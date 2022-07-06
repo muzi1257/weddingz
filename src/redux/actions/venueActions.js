@@ -220,7 +220,7 @@ export const featureVenue = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await api.patch(`/v1/venues/updateStatus/${id}/`, config);
+    const { data } = await api.put(`/v1/venues/updateStatus/${id}/`, config);
 
     dispatch({
       type: VENUE_FEATURE_SUCCESS,
