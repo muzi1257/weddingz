@@ -88,6 +88,27 @@ const navigationConfig = [
           
         ],
       },
+      {
+        id: 'blogs',
+        title: 'Blogs',
+        type: 'collapse',
+        icon: 'assignment',
+        badge: {
+          title: '2',
+          bg: '#e88a',
+          fg: '#FFFFFF',
+        },
+        children: [
+          {
+            id: 'all blogs',
+            title: 'All Blogs',
+            type: 'item',
+            url: '/blogs',
+            exact: true,
+          },
+          
+        ],
+      },
     ],
   },
   {

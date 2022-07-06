@@ -1,12 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Button from '@material-ui/core/Button';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import { useDispatch, useSelector } from 'react-redux';
+import AdminLayout from '../../components/AdminLayout/AdminLayout';
+import CardContent from '@material-ui/core/CardContent';
+import Moment from 'moment';
+
 import AdminBreadcrumbs from '../../components/AdminBreadcrumbs/AdminBreadcrumbs';
-import { Typography, Grid, makeStyles, TextField ,Card, CardActions, CardActionArea,CardMedia, CardContent } from '@material-ui/core';
+import { Typography, Grid, makeStyles, TextField ,Card, CardActionArea,CardMedia,CardActions } from '@material-ui/core';
+import AddPostRightPanels from '../../components/extra/AddPostRightPanels/AddPostRightPanels';
 import {
-  listVendorDetails,
-  approveVendor,
-} from '../../redux/actions/vendorActions';
+  getBlogDetails,
+  updateBlog,
+} from '../../redux/actions/blogActions';
+import { VENUE_UPDATE_RESET } from '../../redux/constants/blogConstants';
+import Image from '@material-ui/core/ImageList';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -18,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
   },
   mb3: {
     margin: '1.3rem 0',
+  },
+  
+  mb4: {
+    margin: '0.8rem 0',
   },
   mb0: {
     marginBottom: 0,
@@ -35,18 +51,19 @@ const useStyles = makeStyles((theme) => ({
   //   height: "350px"
   // }
 }));
-const VendorDetailsPage = (props) => {
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+const BlogDetailsPage = (props) => {
   const match = props.match;
   const { history } = props;
-  const vendorId = match.params.id;
+  const blogId = match.params.id;
 
   
 
   const dispatch = useDispatch();
 
-  const vendorDetails = useSelector((state) => state.vendorDetails);
-  const { error, loading, vendor } = vendorDetails;
-
+  const blogDetails = useSelector((state) => state.blogDetails);
+  const { error, loading, blog } = blogDetails;
+  console.log(blog)
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -54,16 +71,13 @@ const VendorDetailsPage = (props) => {
         
     useEffect(() => {
           if (userInfo) {
-            dispatch(listVendorDetails(vendorId));
+            dispatch(getBlogDetails(blogId));
           } else {
             history.push('/login');
           }
         }, [dispatch, history, userInfo]);
 
-  const submitHandler = (e) => {
-    dispatch(approveVendor(vendor._id));
-    history.push(`/vendors/`)
-  };
+
 
 
   const classes = useStyles();
@@ -71,8 +85,7 @@ const VendorDetailsPage = (props) => {
   return (
     <>
       <Typography className={classes.mb3} variant="h5" component="h1">
-      Vendor : 
-      
+        Blog :
       </Typography>
       <AdminBreadcrumbs path={history} />
       <div className={classes.root}>
@@ -83,10 +96,10 @@ const VendorDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          image={vendor?.photos[0]}
-          alt={vendor?.image}
+          image={blog?.photos[0]}
+          alt={blog?.photo}
         />
-        
+       
         
       </CardActionArea>
       
@@ -99,10 +112,10 @@ const VendorDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          image={vendor?.photos[1]}
-          alt={vendor?.photos}
+          image={blog?.photos[1]}
+          alt={blog?.photo}
         />
-        
+      
       </CardActionArea>
      
     </Card>
@@ -113,10 +126,38 @@ const VendorDetailsPage = (props) => {
         <CardMedia
           component="img"
           height="350"
-          image={vendor?.photos[2]}
-          alt={vendor?.photo}
+          image={blog?.photos[2]}
+          alt={blog?.photo}
         />
-     
+      
+      </CardActionArea>
+      
+    </Card>
+              </Grid>
+              <Grid item xs={12} md={6}>
+          <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="450"
+          image={blog?.photos[3]}
+          alt={blog?.photo}
+        />
+      
+      </CardActionArea>
+      
+    </Card>
+              </Grid>
+              <Grid item xs={12} md={6}>
+          <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="450"
+          image={blog?.photos[4]}
+          alt={blog?.photo}
+        />
+      
       </CardActionArea>
       
     </Card>
@@ -125,42 +166,20 @@ const VendorDetailsPage = (props) => {
       <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardContent>
-        <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
-            Vendor Name :
-            {vendor?.category}
+          <Typography className={classes.mb3} gutterBottom variant="h4" component="div" align='center'>
+            Blog Title : 
+            {blog?.title} 
           </Typography>
-          <Typography className={classes.mb4} variant="h5" color="text.secondary" align='center'>
-            Approved  :
-            {String(vendor?.isApproved)}
-            </Typography>
           <Typography className={classes.mb4} gutterBottom variant="h5" component="div">
-            Vendor Ratings :
-            {vendor?.ratingsAverage}
+             Number : 
+            {blog?._id}
           </Typography>
-          <Typography className={classes.mb4} variant="h5" color="text.secondary">
-          Payment Terms :
-            {vendor?.paymentTerms}
-            </Typography>
-          <Typography className={classes.mb4} variant="h5" color="text.secondary">
-            Vendor Price :
-            {vendor?.price}
-            </Typography>
-            <Typography className={classes.mb4} variant="h5" color="text.secondary">
-            Contact Number :
-            {vendor?.contactNo}
-            </Typography>
-            <Typography className={classes.mb4} variant="h5" color="text.secondary">
-            Category :
-            {vendor?.category}
-            </Typography>
-            <Typography className={classes.mb4} variant="h5" color="text.secondary" >
-            Featured  :
-            {String(vendor?.isFeatured)}
-            </Typography>
+          
             <Typography className={classes.mb4} variant="h6" color="text.secondary">
-            Description :
-            {vendor?.description}
+            Description :  
+            {blog?.description} 
             </Typography>
+            
 
         </CardContent>
       </CardActionArea>
@@ -172,25 +191,22 @@ const VendorDetailsPage = (props) => {
       </Grid>
      
         </Grid>
-        <Typography align='center' >
-  
-     
+        <Typography align='center'>
     <Button
       color='primary'
       size='large'
       type='submit'
       variant='contained'
-      onClick={submitHandler}
+      
+
      >
-Approve This Vendor </Button>
+Edit    </Button>
   </Typography>
           
       </div>
       
-    
-     
     </>
   );
 };
 
-export default VendorDetailsPage;
+export default BlogDetailsPage;

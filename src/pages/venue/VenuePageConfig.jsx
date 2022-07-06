@@ -1,4 +1,4 @@
-import AllVenuesPage from './AllTrolliesPage';
+import AllVenuesPage from './AllVenuesPage';
 import AddVenuePage from './AddVenuePage';
 import VenueDetailsPage from './VenueProfilePage';
 export const VenuesPageConfig = {

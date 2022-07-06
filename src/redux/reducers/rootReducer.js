@@ -22,6 +22,13 @@ import {
   venueCreateReducer,
   venueUpdateReducer,
 } from './venueReducers';
+import {
+  blogListReducer,
+  blogDetailsReducer,
+  blogDeleteReducer,
+  blogCreateReducer,
+  blogUpdateReducer,
+} from './blogReducers';
 
 
 const rootReducer = combineReducers({
@@ -38,6 +45,12 @@ const rootReducer = combineReducers({
   venueDelete: venueDeleteReducer,
   venueCreate: venueCreateReducer,
   venueUpdate: venueUpdateReducer,
+
+  blogList: blogListReducer,
+  blogDetails: blogDetailsReducer,
+  blogDelete: blogDeleteReducer,
+  blogCreate: blogCreateReducer,
+  blogUpdate: blogUpdateReducer,
 
   userLogin: userLoginReducer,
   userCreate: userCreateReducer,
