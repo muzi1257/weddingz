@@ -202,7 +202,7 @@ export const approveVendor = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await api.patch(`/v1/approve/${id}/`, config);
+    const { data } = await api.put(`/v1/approve/${id}/`, config);
 
     dispatch({
       type: VENDOR_APPROVE_SUCCESS,
